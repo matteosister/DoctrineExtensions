@@ -1,18 +1,17 @@
 <?php
 
-namespace Sortable\Fixture;
+namespace Sortable\Fixture\Document;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @ORM\Document(repositoryClass="Gedmo\Sortable\Document\Repository\SortableRepository")
+ * @MongoDB\Document(repositoryClass="Gedmo\Sortable\Document\Repository\SortableRepository")
  */
 class Node
 {
     /**
      * @MongoDB\Id
-     * @MongoDB\GeneratedValue
      */
     private $id;
 
@@ -29,7 +28,7 @@ class Node
 
     /**
      * @Gedmo\SortablePosition
-     * @MongoDB\String
+     * @MongoDB\Int
      */
     private $position;
 
